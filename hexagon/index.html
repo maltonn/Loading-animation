@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <div id="loading">
+    <div class="outer">
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+    </div>
+
+    <div class="inner">
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+    </div>
+  </div>
+  <script id="loading_script">
+    bars=document.querySelectorAll('#loading>.outer>div')
+    white_bars=document.querySelectorAll('#loading>.outer>div>div')
+    len=bars.length
+    duration=180
+    for(i=0;i<len/2;i++){
+      bars[i].style.transform="rotate("+(360/len*i)+"deg)"
+      white_bars[i].style.animation="anime1 "+(duration*len)+"ms linear "+(i*duration)+"ms infinite"
+      bars[i+len/2].style.transform="rotate("+(360/len*(i+len/2))+"deg)"
+      white_bars[i+len/2].style.animation="anime1 "+(duration*len)+"ms linear "+(i*duration)+"ms infinite"
+    }
+    inner_bars=document.querySelectorAll('#loading>.inner>div')
+    inner_white_bars=document.querySelectorAll('#loading>.inner>div>div')
+    len=inner_bars.length
+    for(i=0;i<len/2;i++){
+      inner_bars[i].style.transform="rotate("+-(360/len*i)+"deg)"
+      inner_white_bars[i].style.animation="anime2 "+(duration*len)+"ms linear "+(i*duration)+"ms infinite"
+      inner_bars[i+len/2].style.transform="rotate("+-(360/len*(i+len/2))+"deg)"
+      inner_white_bars[i+len/2].style.animation="anime2 "+(duration*len)+"ms linear "+(i*duration)+"ms infinite"
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  margin: 0;
+}
+
+#loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#loading>div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading>.outer {
+  transform: translateY(-180px);
+}
+
+#loading>.inner {
+  transform: translateY(-90px);
+}
+
+#loading>div>div {
+  position: absolute;
+  height: 2px;
+  margin: 0;
+  overflow: hidden;
+}
+
+#loading>.outer>div {
+  width: 200px;
+  transform-origin: center 180px;
+}
+
+#loading>.inner>div {
+  width: 100px;
+  transform-origin: center 90px;
+}
+
+#loading>div>div>div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#loading>.outer>div>div {
+  transform: translateX(-100%);
+}
+
+#loading>.inner>div>div {
+  transform: translateX(100%)
+}
+
+@keyframes anime1 {
+  33% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes anime2 {
+  33% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

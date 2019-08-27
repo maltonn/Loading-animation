@@ -1,0 +1,42 @@
+body{
+  width:100vw;
+  height:100vh;
+  margin: 0;
+  padding: 0;
+}
+#cartain1{
+  width:100%;
+  height:100%;
+}
+#cartain1 div {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  transform: scale(0);
+  animation-name: scaleup;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+}
+#cartain1 div:nth-child(1){
+  background-color:#EF7674;
+  animation-delay: 0.3s;
+}
+#cartain1 div:nth-child(2){
+  background-color: #EC5766;
+  animation-delay: 0.5s;
+}
+#cartain1 div:nth-child(3){
+  background-color: #DA344D;
+  animation-delay: 0.7s;
+}
+@keyframes scaleup {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1)
+  }
+}

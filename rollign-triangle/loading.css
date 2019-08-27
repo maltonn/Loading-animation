@@ -1,0 +1,108 @@
+body,html{
+  width: 100vw;
+  height: 100vh;
+  --s: 50px;
+  --r: 0.75;
+  overflow: hidden;
+}
+#loading{
+  position: absolute;
+  top:0;
+  left:0;
+  margin::0;
+  padding:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: white;
+}
+
+.triangle {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 var(--s) calc(var(--s) * 1.73) var(--s);
+  border-color: transparent transparent white transparent;
+  display: flex;
+  justify-content: center;
+  transform-origin: center calc(var(--s) * 1.73 / 3 * 2);
+}
+.inner_triangle {
+  position: absolute;
+  top: calc((var(--s) * 1.73 * (1 - var(--r)) / 3 * 2));
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 calc(var(--s) * var(--r)) calc(var(--s) * 1.73 * var(--r)) calc(var(--s) * var(--r));
+}
+#t1{
+  animation:rotate 1800ms ease 0s infinite;
+  transform: scale(0.5) translateX(50px);
+  z-index: 8;
+}
+#t2{
+  animation:rotate 1800ms ease -600ms infinite;
+  transform: scale(0.5) translateX(-50px);
+  z-index: 8;
+}
+#t3{
+  animation:rotate 1800ms ease -1200ms infinite;
+  z-index: 9;
+}
+#t1>div{
+    border-color: transparent transparent rgb(185, 185, 139) transparent;
+}
+#t2>div{
+    border-color: transparent transparent rgb(238, 143, 70) transparent;
+}
+#t3>div{
+    border-color: transparent transparent rgb(129, 205, 217) transparent;
+}
+@keyframes rotate {
+  0%{
+    transform: scale(0.5) translateX(70px);
+    z-index: 8;
+    opacity: 0;
+  }
+  10%{
+    transform: scale(0.5) translateX(70px);
+    z-index: 8;
+    opacity: 1;
+  }
+  50%{
+    transform: scale(1) translateX(0);
+    z-index: 10;
+    opacity: 1;
+  }
+  90%{
+    transform: scale(0.5) translateX(-70px);
+    z-index: 8;
+    opacity: 1;
+  }
+  100%{
+    transform: scale(0.5) translateX(-70px);
+    z-index: 8;
+    opacity: 0;
+  }
+}
+
+/*以下、仮置き*/
+#loading{
+  animation: fadeout 500ms ease 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+  95%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
+}
